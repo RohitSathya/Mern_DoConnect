@@ -1,0 +1,83 @@
+
+body,html{
+    height: 100%;
+}
+
+.messagesended{
+    margin-left: 340px;
+    margin-top: 10px;
+}
+.messagerecieved{
+    margin-left: 10px;
+}
+
+.contentrecieved{
+    margin-top: 10px;
+
+}
+.contentsended{
+    background-color: orange;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: -70px;
+}
+.contentrecieved{
+    background-color: gold;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+   
+}
+.back{
+    background-color: violet;
+    height: 50px;
+    margin-top: 30px;
+    width: 500px;
+    border-radius: 20px;
+}
+.back:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+.m3{
+    width: 384px;
+    height: 488px;
+    background: rgb(194, 79, 79);
+    margin-top: -535px;
+    margin-left: 121px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    overflow-y: auto;
+}
+.ins {
+    margin-top: -220%;
+    margin-left: 650px;
+    display: none;
+  }
+  
+  .ins input {
+    margin-top: 740px;
+    width: 300px;
+    margin-left: 30px;
+    border-radius: 10px;
+  }
+  .uo{
+    margin-top: -22px;
+  }
+  
+  .ins .uo button {
+    width: 80px;
+    height: 4vh;
+    margin-left: 340px;
+    margin-top: -240px;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    font-size: 20px;
+  }
+
+   
+    

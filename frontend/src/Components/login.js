@@ -24,7 +24,7 @@ export default function login() {
          navigate('/admindashboard')
       }
       else{
-        const response=await axios.post('http://localhost:3000/api/user/login',{username:username,password:password})
+        const response=await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/login',{username:username,password:password})
         
         const {userdetail,token,message}=response.data
         if(message=='s'){

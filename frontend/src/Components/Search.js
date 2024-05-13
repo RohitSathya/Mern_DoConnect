@@ -19,7 +19,7 @@ export default function Search() {
   const [count,setcount]=useState(0)
   const [uid,suid]=useState()
   async function sub() {
-    const response = await axios.post('http://localhost:3000/api/user/qa', { question: text });
+    const response = await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/qa', { question: text });
     const { qa, message } = response.data;
 
     
@@ -45,7 +45,7 @@ export default function Search() {
 
   async function addComment(e, a) {
     console.log(e, a);
-    const res = await axios.post('http://localhost:3000/api/user/addcmt', { questionId: e, comment: a });
+    const res = await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/addcmt', { questionId: e, comment: a });
     const { message } = res.data;
     if (message === 's') {
       setAnswers('')
@@ -53,7 +53,7 @@ export default function Search() {
   }
 
   async function getComment(e) {
-    const res = await axios.get(`http://localhost:3000/api/user/getcmt/${e}`);
+    const res = await axios.get(`https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/getcmt/${e}`);
     setCmtList(res.data);
     setShowComments(true); // Show comments after fetching
   }

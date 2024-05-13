@@ -23,7 +23,7 @@ export default function register() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const check=emailRegex.test(email)
         if(check){
-            const response=await axios.post('http://localhost:3000/api/user/register',{username:username,email:email,password:password})
+            const response=await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/register',{username:username,email:email,password:password})
             const {message}=response.data
             if(message=='s'){
                 navigate('/login')

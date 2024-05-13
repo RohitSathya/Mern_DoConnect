@@ -17,7 +17,7 @@ export default function AskQuestion() {
       
         const ud=localStorage.getItem('userdetail')
         const parse=JSON.parse(ud)
-        const res=await axios.post('http://localhost:3000/api/user/question',{userId:parse._id,text:text,title:title})
+        const res=await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/question',{userId:parse._id,text:text,title:title})
         const {message}=res.data
         if(message=='f'){
           toast.warn('Question Already There!!!')

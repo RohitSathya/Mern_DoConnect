@@ -15,7 +15,7 @@ export default function ApproveQuestion() {
   
   useEffect(() => {
     async function getQuestions() {
-      const res = await axios.get('http://localhost:3000/api/user/qaa');
+      const res = await axios.get('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/qaa');
       const { message, qaa } = res.data;
       if (message === 'f') {
         sf(0);
@@ -28,10 +28,10 @@ export default function ApproveQuestion() {
   }, []);
 
   async function decline(id) {
-    const res1 = await axios.delete(`http://localhost:3000/api/user/deleteqa/${id}`);
+    const res1 = await axios.delete(`https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/deleteqa/${id}`);
     const { message } = res1.data;
     if (message === 's') {
-      const res = await axios.get('http://localhost:3000/api/user/qaa');
+      const res = await axios.get('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/qaa');
       const { message, qaa } = res.data;
       if (message === 'f') {
         sf(0);
@@ -49,7 +49,7 @@ export default function ApproveQuestion() {
 
   async function update(id, updatedQuestion) {
     console.log('update');
-    const res3 = await axios.post('http://localhost:3000/api/user/update', updatedQuestion);
+    const res3 = await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/update', updatedQuestion);
     // Close modal after updating
     setModalOpen(false);
   }

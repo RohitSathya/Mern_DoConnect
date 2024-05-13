@@ -5,9 +5,9 @@ import './home.css'
 import { useState } from 'react'
 import { useRef } from 'react';
 import dc from '../../src/image/dc.png'
-import  io from 'socket.io-client'
+
 export default function home() {
-    const socket=io.connect('http://localhost:3000')
+    
     const navigate=useNavigate()
     const [questionText, setQuestionText] = useState('');
     const [message, setMessage] = useState('');
@@ -45,7 +45,7 @@ export default function home() {
     async function askquestion(){
          const ud=localStorage.getItem('userdetail')
          const parse=JSON.parse(ud)
-         const response=await axios.post(`http://localhost:3000/api/user/question`,{userName:parse.username,text:questionText,userId:parse._id})
+         const response=await axios.post(`https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/user/question`,{userName:parse.username,text:questionText,userId:parse._id})
 
     }
     const handleChatClick = () => {
@@ -56,7 +56,7 @@ export default function home() {
         if (message.trim() !== '') {
           const ud=localStorage.getItem('userdetail')
           const parse=JSON.parse(ud)
-          const res=await axios.post('http://localhost:5000/api/chat/sendmsg',{userId:parse._id,message:message,to:'Admin'})
+          const res=await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/chat/sendmsg',{userId:parse._id,message:message,to:'Admin'})
           const {m}=res.data
           if(m=='s'){
             setMessage('')
@@ -82,7 +82,7 @@ export default function home() {
         console.log(e)
         const m1=document.getElementById('m1');
         m1.style.display='block'
-         const res=await axios.get(`http://localhost:3000/api/chat/getmsgU/${e}`)
+         const res=await axios.get(`https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/chat/getmsgU/${e}`)
          const {m}=res.data
          if(m=='f'){
             sf(0)
@@ -101,7 +101,7 @@ export default function home() {
             return;
         }
     
-        const res=await axios.post('http://localhost:3000/api/chat/sendmsg',{userId:uid,message:inputMessage,to:'Admin'})
+        const res=await axios.post('https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/chat/sendmsg',{userId:uid,message:inputMessage,to:'Admin'})
         const {m}=res.data
         if(m=='s'){
             
@@ -110,7 +110,7 @@ export default function home() {
             
         setInputMessage(''); 
         inputMessageRef.current.focus(); 
-        const res2=await axios.get(`http://localhost:3000/api/chat/getmsgU/${uid}`)
+        const res2=await axios.get(`https://mern-do-connectback-ky47u3jyg-rohits-projects-a5c6d24a.vercel.app/api/chat/getmsgU/${uid}`)
         setmessages(res2.data)
       
      

@@ -12,12 +12,6 @@ app.use('/api/user',UserRoute)
 app.use('/api/admin',AdminRoute)
 app.use('/api/chat',chatRoute)
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://mern-do-connectfront-lyjsjo9me-rohits-projects-a5c6d24a.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
 
 mongoose.connect('mongodb+srv://admin:sunsetwest1234RRR@royoapi.3qmdrjq.mongodb.net/doconn?retryWrites=true&w=majority&appName=RoyoApi').then(()=>{
 
